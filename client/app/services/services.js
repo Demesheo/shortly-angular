@@ -8,13 +8,24 @@ angular.module('shortly.services', [])
     url: '/api/links'
   })
     .then(function(resp){
-      console.log('**********THIS IS OUR RESPONSE***************', resp)
       return resp.data;
     })
   };
 
+  var addLink = function(link){
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function(resp){
+      return resp.data;
+    })
+  }
+
   return {
-    getLinks : getLinks
+    getLinks : getLinks,
+    addLink: addLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
