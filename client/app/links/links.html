@@ -1,7 +1,11 @@
 <div id='container'>
   <!-- Your html here -->
   <div ng-controller='LinksController'>
-
+  <ul class="links">
+  <li ng-repeat="links in data">
+    <span>{{data.links}}</span>
+  </li>
+</ul>
   		
   </div>
 </div>
