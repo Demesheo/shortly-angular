@@ -6,9 +6,7 @@ angular.module('shortly.shorten', [])
   	url: null
   };
 
-  $scope.addLink = function(field){
-  	console.log('link', field);
-  		$scope.link.url = field;
+  $scope.addLink = function(){
   	Links.addLink($scope.link).then(function(data){
   		console.log("our add link data ******* ", data);
   	})
